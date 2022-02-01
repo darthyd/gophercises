@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -84,6 +85,9 @@ func main() {
 		if err != nil {
 			continue
 		}
+
+		answer = strings.ToLower(answer)
+		answer = strings.TrimSpace(answer)
 
 		if answer == q.Answer {
 			answered++
