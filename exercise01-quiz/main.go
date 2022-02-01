@@ -18,9 +18,10 @@ type Question struct {
 func main() {
 	shuffled := flag.Bool("s", false, "Shuffle the questions")
 	timeLimit := flag.Int("t", 30, "Time limit in seconds")
+	file := flag.String("f", "problems.csv", "CSV containing questions and answers in key,value format")
 	flag.Parse()
 
-	csvFile, err := os.Open("problems.csv")
+	csvFile, err := os.Open(*file)
 	defer func(csvFile *os.File) {
 		err := csvFile.Close()
 		if err != nil {
