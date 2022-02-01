@@ -2,8 +2,9 @@
 ## A repository with my resolutions of the GO exercises from github.com/gophercises
 
 ### Gophercises is a FREE course that will help you become more familiar with Go while developing your skills as a programmer. In the course we will build roughly 20 different mini-applications, packages, and tools that are each designed to teach you something different.
+
 #
-#
+
 **In the course we will learn about and practice using:**
 
 - Channels
