@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -17,9 +18,10 @@ type Question struct {
 func main() {
 	shuffled := flag.Bool("s", false, "Shuffle the questions")
 	timeLimit := flag.Int("t", 30, "Time limit in seconds")
+	file := flag.String("f", "problems.csv", "CSV containing questions and answers in key,value format")
 	flag.Parse()
 
-	csvFile, err := os.Open("problems.csv")
+	csvFile, err := os.Open(*file)
 	defer func(csvFile *os.File) {
 		err := csvFile.Close()
 		if err != nil {
@@ -59,8 +61,8 @@ func main() {
 			select {
 			case <-ticker.C:
 				fmt.Println(
-					"\nYou answered correctly", correct, "of", answered,
-					"questions and made", points, "points.",
+					"\nYou answered correctly", correct, " out of", len(csvLines), "questions.",
+					"\nYou got", points, "points.",
 				)
 				os.Exit(0)
 			}
@@ -84,6 +86,9 @@ func main() {
 		if err != nil {
 			continue
 		}
+
+		answer = strings.ToLower(answer)
+		answer = strings.TrimSpace(answer)
 
 		if answer == q.Answer {
 			answered++
