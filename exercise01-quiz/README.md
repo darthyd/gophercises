@@ -1,6 +1,6 @@
 # Exercise #1: Quiz Game
 
-[![exercise status: in progress](https://img.shields.io/badge/from%20gophercises-in%20progress-green.svg?style=for-the-badge)](https://gophercises.com/exercises/quiz)
+[![exercise status: done](https://img.shields.io/badge/from%20gophercises-done-green.svg?style=for-the-badge)](https://gophercises.com/exercises/quiz)
 
 ## Exercise details
 
