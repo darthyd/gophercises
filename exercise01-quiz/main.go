@@ -61,8 +61,8 @@ func main() {
 			select {
 			case <-ticker.C:
 				fmt.Println(
-					"\nYou answered correctly", correct, "of", answered,
-					"questions and made", points, "points.",
+					"\nYou answered correctly", correct, " out of", len(csvLines), "questions.",
+					"\nYou got", points, "points.",
 				)
 				os.Exit(0)
 			}
